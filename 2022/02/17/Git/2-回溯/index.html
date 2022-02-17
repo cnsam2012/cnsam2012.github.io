@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="使用 git status 查看工作区状态 使用 git diff 查看差异  版本回退 git log （提交历史）保存了 commit 记录 git reflog （命令历史）记录了每一次命令 用HEAD表示当前版本 git reset 会将所有stage的文件状态，都改变成非stage状  操作12345678910111213141516#回退往上1个版本$ git reset --ha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/02/17/Git/2-%E5%9B%9E%E6%BA%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="使用 git status 查看工作区状态 使用 git diff 查看差异  版本回退 git log （提交历史）保存了 commit 记录 git reflog （命令历史）记录了每一次命令 用HEAD表示当前版本 git reset 会将所有stage的文件状态，都改变成非stage状  操作12345678910111213141516#回退往上1个版本$ git reset --ha">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img%5Cwd-repo-stage.png">
+<meta property="article:published_time" content="2022-02-17T07:30:55.871Z">
+<meta property="article:modified_time" content="2022-01-11T08:30:55.155Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img%5Cwd-repo-stage.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Git/2-回溯" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/17/Git/2-%E5%9B%9E%E6%BA%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-02-17T07:30:55.871Z" itemprop="datePublished">2022-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>使用 <code>git status</code> 查看工作区状态</li>
+<li>使用 <code>git diff</code> 查看差异</li>
+</ul>
+<h1 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h1><ul>
+<li><code>git log</code> （提交历史）保存了 <code>commit</code> 记录</li>
+<li><code>git reflog</code> （命令历史）记录了每一次命令</li>
+<li>用<code>HEAD</code>表示当前版本</li>
+<li><code>git reset</code> 会将所有stage的文件状态，都改变成非stage状</li>
+</ul>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a><strong>操作</strong></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#回退往上1个版本</span><br><span class="line">$ git reset --hard HEAD^</span><br><span class="line"></span><br><span class="line">#回退往上100个版本</span><br><span class="line">$ git reset --hard HEAD~100</span><br><span class="line"></span><br><span class="line">#查看每一次命令 前串数字是版本号</span><br><span class="line">$ git reflog</span><br><span class="line">04db4ce (HEAD -&gt; master) HEAD@&#123;0&#125;: reset: moving to HEAD^</span><br><span class="line">076f321 HEAD@&#123;1&#125;: commit: 删掉了text.txt</span><br><span class="line">04db4ce (HEAD -&gt; master) HEAD@&#123;2&#125;: commit: 加了一句有意义的话，减少了一些没用的东西</span><br><span class="line">48e409c HEAD@&#123;3&#125;: commit (initial): 添加了两个测试文件，里边没有什么有意义的东西</span><br><span class="line"></span><br><span class="line">#回退到版本号（commit id）为‘076f321’的版本</span><br><span class="line">$ sudo git reset --hard 076f321</span><br><span class="line">HEAD is now at 076f321 删掉了text.txt</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="工作区和暂存区"><a href="#工作区和暂存区" class="headerlink" title="工作区和暂存区"></a>工作区和暂存区</h1><p><img src="/img%5Cwd-repo-stage.png" alt="image-wd-repo-stage"></p>
+<ul>
+<li><strong>工作区（Working Directory）</strong>：<code>learngit</code> 文件夹就是一个工作区。</li>
+<li><strong>版本库（Repository）</strong>：工作区有个隐藏目录 .git ，这个不算工作区，而是 Git 的版本库。</li>
+<li>版本库里面的 <strong>index(stage)</strong> 文件叫<strong>暂存区</strong>，还有Git为我们自动创建的第一个分支 master ，以及指向 master 的一个指针叫做 HEAD。</li>
+<li><code>git add</code>命令实际上就是把要提交的所有修改放到<strong>暂存区（Stage）</strong></li>
+<li>然后，执行<code>git commit</code>就可以一次性把<strong>Stage</strong>的所有修改提交到<strong>分支</strong><ul>
+<li>（我们现在只有唯一一个分支 master，所以现在就是往 master 分支上提交更改）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><code>git status</code>:</p>
+<p>作两次对比，工作区 vs 暂存区 以及 暂存区 vs 仓库，并将两次对比的结果显示在输出中。</p>
+<p>哪个对比没差别，就不显示。两个对比都没差别，就显示working tree clean。</p>
+<p><code>git diff</code>：</p>
+<ol>
+<li>git diff：是查看working tree与index的差别的。</li>
+<li>git diff –cached：是查看index与repository的差别的。</li>
+<li>git diff HEAD：是查看working tree和repository的差别的。其中：HEAD代表的是最近的一次commit的信息。</li>
+</ol>
+</blockquote>
+<h1 id="管理与撤销修改"><a href="#管理与撤销修改" class="headerlink" title="管理与撤销修改"></a>管理与撤销修改</h1><ul>
+<li><p>git管理你的<strong>修改行为</strong></p>
+</li>
+<li><p>对于<strong>同一行发生的内容变化</strong>，git理解为先删除修改前的此行、后添加修改后的此行</p>
+<ul>
+<li><blockquote>
+<p> （机翻，原文寻无）</p>
+<p> Unix历史上有一个所有人类可读的文本文件都以换行符结尾的约定。当时，这避免了在显示或连接文本文件时进行额外的处理，并避免了将文本文件与包含其他类型数据的文件(例如原始二进制数据，这是人类无法读取的)进行不同的处理。</p>
+<p> 由于这种惯例，那个时代的许多工具都期望换行结束，包括文本编辑器、差异化工具和其他文本处理工具。Mac OS X是在BSD Unix上构建的，Linux是为与Unix兼容而开发的，因此两个操作系统都继承了相同的约定、行为和工具。</p>
+<p> Windows并没有开发成与Unix兼容，所以它没有相同的约定，而且大多数Windows软件都会处理得很好，没有后继的换行符。但是，由于Git首先是为Linux开发的，并且许多开源软件都建立在与Unix兼容的系统上，如Linux、Mac OS X、FreeBSD等，因此大多数开源社区及其工具(包括编程语言)继续遵循这些约定。</p>
+<p> 有一些技术原因在1971年是有意义的，但在这个时代，它主要是传统的，并保持与现有工具的兼容性。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><code>git restore</code> 是git 2.23版本新增的命令，用来代替身兼数职的<code>git checkout</code></p>
+</li>
+<li><p>从暂存区恢复工作区，</p>
+<p><code>git resotre --worktree readme.txt</code></p>
+</li>
+<li><p>从master恢复暂存区 </p>
+<p><code>git restore --staged readme.txt</code></p>
+</li>
+<li><p>从master同时恢复工作区和暂存区</p>
+<p><code>git restore --source=HEAD --staged --worktree readme.txt</code></p>
+</li>
+</ul>
+<h1 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h1><ul>
+<li><p>手动删除文件，然后使用 <code>git rm &lt;file&gt;</code> 和 <code>git add&lt;file&gt;</code> 效果是一样的</p>
+</li>
+<li><p>从来没有被添加到版本库就被删除的文件，是无法恢复的！</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/17/Git/2-%E5%9B%9E%E6%BA%AF/" data-id="ckzqnzitp0002x8azdeme06x9" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/17/Git/4-%E5%88%86%E6%94%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/17/Git/1-%E5%BC%80%E5%A7%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E6%9D%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%B8%B8%E8%A7%81%E5%BF%BD%E7%95%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-issue/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

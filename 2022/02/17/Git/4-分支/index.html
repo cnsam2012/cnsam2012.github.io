@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="git branch 命令会列出所有分支，当前分支前面会标一个*号  创建与合并分支12#创建分支newbranchgit branch newbranch  12345#切换至分支newbranchgit checkout newbranch#切换分支推荐使用switchgit switch newbranch  123456#创建 + 切换分支，一个顶俩git checkout -b new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/02/17/Git/4-%E5%88%86%E6%94%AF/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="git branch 命令会列出所有分支，当前分支前面会标一个*号  创建与合并分支12#创建分支newbranchgit branch newbranch  12345#切换至分支newbranchgit checkout newbranch#切换分支推荐使用switchgit switch newbranch  123456#创建 + 切换分支，一个顶俩git checkout -b new">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-17T07:30:55.887Z">
+<meta property="article:modified_time" content="2022-01-11T14:00:56.340Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Git/4-分支" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/17/Git/4-%E5%88%86%E6%94%AF/" class="article-date">
+  <time class="dt-published" datetime="2022-02-17T07:30:55.887Z" itemprop="datePublished">2022-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><code>git branch</code> 命令会列出所有分支，当前分支前面会标一个<code>*</code>号</li>
+</ul>
+<h1 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#创建分支newbranch</span><br><span class="line">git branch newbranch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#切换至分支newbranch</span><br><span class="line">git checkout newbranch</span><br><span class="line"></span><br><span class="line">#切换分支推荐使用switch</span><br><span class="line">git switch newbranch</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#创建 + 切换分支，一个顶俩</span><br><span class="line">git checkout -b newbranch</span><br><span class="line">#switch也可以</span><br><span class="line">git switch -c newbranch</span><br><span class="line">#注意：这里C大写，可用于强制新建分支，会覆盖此前存在的同名分支</span><br><span class="line">git switch -C newbranch</span><br></pre></td></tr></table></figure>
+
+<p>在该分支上做文件修改并 <code>commit</code> 后，切换回 <code>master</code> 分支</p>
+<blockquote>
+<p>切换回 <code>master</code> 分支后，刚才修改的内容不见了！</p>
+<p>因为那个提交是在 <code>newbranch</code> 分支上，而 <code>master</code> 分支此刻的提交点并没有变</p>
+<p>这时就需要<strong>合并分支</strong></p>
+</blockquote>
+<p>使用 <code>git merge</code> 把 <code>newbranch</code> 的作业成果合并到<strong>当前</strong>（master）分支上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge newbranch</span><br></pre></td></tr></table></figure>
+
+<p>合并后删除（delete）分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d newbranch</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h1><ul>
+<li>解决冲突：把Git合并失败的文件<strong>手动编辑</strong>为我们希望的内容，再提交</li>
+<li><code>git log --graph</code> 呈现分支合并图</li>
+</ul>
+<h1 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h1><h1 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h1><h1 id="Feature分支"><a href="#Feature分支" class="headerlink" title="Feature分支"></a>Feature分支</h1><h1 id="协作"><a href="#协作" class="headerlink" title="协作"></a>协作</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/17/Git/4-%E5%88%86%E6%94%AF/" data-id="ckzqnzitt0004x8az1irsefgs" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/17/Git/3-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/17/Git/2-%E5%9B%9E%E6%BA%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/17/Git/1-%E5%BC%80%E5%A7%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E6%9D%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%B8%B8%E8%A7%81%E5%BF%BD%E7%95%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-issue/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

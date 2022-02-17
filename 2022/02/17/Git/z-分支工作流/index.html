@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="其实最基本的流程就是新建分支，在这个分支上改动代码，再提交上去，跟master分支合并。 新建分支首先，在你新建分支之前，你应该在master分支，并且要保证你当前的是最新代码，要不然就是找死，最后提交代码就会出问题。 12345git pull origin master #，在master分支下，保证当前代码与线上同步，是最新的git branch &lt;分支名&gt; #，正儿八经的新建分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="其实最基本的流程就是新建分支，在这个分支上改动代码，再提交上去，跟master分支合并。 新建分支首先，在你新建分支之前，你应该在master分支，并且要保证你当前的是最新代码，要不然就是找死，最后提交代码就会出问题。 12345git pull origin master #，在master分支下，保证当前代码与线上同步，是最新的git branch &lt;分支名&gt; #，正儿八经的新建分">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-17T07:30:55.918Z">
+<meta property="article:modified_time" content="2022-02-16T03:54:03.687Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Git/z-分支工作流" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/" class="article-date">
+  <time class="dt-published" datetime="2022-02-17T07:30:55.918Z" itemprop="datePublished">2022-02-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>其实最基本的流程就是新建分支，在这个分支上改动代码，再提交上去，跟master分支合并。</p>
+<h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p>首先，在你新建分支之前，你应该在master分支，并且要保证你当前的是最新代码，要不然就是找死，最后提交代码就会出问题。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master #，在master分支下，保证当前代码与线上同步，是最新的</span><br><span class="line">git branch &lt;分支名&gt; #，正儿八经的新建分支。</span><br><span class="line">git checkout &lt;分支名&gt; #，切换 到新建的分支上，再进行下一步。</span><br><span class="line">git push origin &lt;分支名&gt; #,把本地分支推到远端，让远端也有一个你的分支，用来后面提交你的代码。</span><br><span class="line">git checkout -b &lt;分支名&gt; #新建分支并切换到该分支：</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>在新建的分支上写完代码之后，就可以提交代码了。此时应该在你新建的分支上</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git status #,查看自己写了哪些东西。</span><br><span class="line">git add .</span><br><span class="line">git commit -m ‘本次提交的描述（写自己的话，不要抄我的，哼！）’</span><br><span class="line">git push origin &lt;分支名&gt; </span><br><span class="line"><span class="meta">#</span><span class="language-bash">,push是从本地向远端推代码，也就是把自己写的代码提交上去，像给老师交作业一样。</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">执行完上一步，有可能报错，此时淡定，不认识英语的话在线翻译是干嘛的，大多数时候提示你，本地落后于远端，（意思就是远端比本地多了一些代码，为什么会出现这种情况呢，肯定是你跟别人共用一个分支，他提交了一段代码到远端，所以导致你的本地落后于远端）既然落后了，那就把他更新成最新的呗，</span></span><br><span class="line">git pull --rebase origin #远程分支名</span><br><span class="line"><span class="meta">#</span><span class="language-bash">执行完之后，你的代码就跟远端又一样了。并且你的修改仍然在，此时再提交你的代码</span></span><br><span class="line">git push origin &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="rebase代码"><a href="#rebase代码" class="headerlink" title="rebase代码"></a>rebase代码</h3><p>提交完代码之后需要让测试人员进行测试，若测试没问题，就可以rebase代码，然后上线了。（这一步是保证你要上线的代码是基于最新的master）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git pull —rebase origin &lt;分支名&gt;</span><br><span class="line">git pull —rebase origin master</span><br><span class="line"><span class="meta">#</span><span class="language-bash">执行这两步的时候都有可能发生冲突，此时你要做的就是解决冲突，再继续提交。</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">解决完冲突之后，git add .</span></span><br><span class="line">git rebase —continue</span><br><span class="line"><span class="meta">#</span><span class="language-bash">若此时还有冲突，继续解决，解决完继续执行1，2步。</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">若此时没有报错，git push origin &lt;分支名&gt;；（这一步必须在git pull —rebase origin master成功之后执行）</span></span><br><span class="line"><span class="meta">#</span><span class="language-bash">此时若显示，当前分支落后于master分支，则需要强推，git push -f origin &lt;分支名&gt;，若不报错，则rebase成功。</span></span><br></pre></td></tr></table></figure>
+
+<p>以上就是一个完整的流程，以下是一些常用的git操作</p>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><p>删除本地分支 ( <strong>切换到master分支之后再删除</strong> )</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除远端分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+
+<p>查看本地有哪些分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何从远程拉一个分支"><a href="#如何从远程拉一个分支" class="headerlink" title="如何从远程拉一个分支"></a>如何从远程拉一个分支</h3><p>当你跟别人共用一个分支的时候（有时候前端会共用一个分支），如果别人新建了一个分支（此时远端应该已经有了你们要用的分支），你要做的就是把远端的分支拉到自己本地。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin &lt;分支名&gt;: &lt;分支名&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><p>如果你基于主分支master新建了分支dev，再基于dev分支新建了一个分支test，在test分支开发完成后，需要将test合并到dev分支上。此时，先用git branch 查看自己在哪个分支上，然后git checkout dev(切换到需要合并的分支上)，最后<code>git merge test</code>（在dev分支上执行这句，意思是将test合并到dev分支上）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/" data-id="ckzqnzitu0006x8azh7xhhnp2" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/02/17/Git/z-%E6%9D%82/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/17/Git/z-%E5%B8%B8%E8%A7%81%E5%BF%BD%E7%95%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/02/">February 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/02/17/Git/1-%E5%BC%80%E5%A7%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E6%9D%82/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%88%86%E6%94%AF%E5%B7%A5%E4%BD%9C%E6%B5%81/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-%E5%B8%B8%E8%A7%81%E5%BF%BD%E7%95%A5/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/02/17/Git/z-issue/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

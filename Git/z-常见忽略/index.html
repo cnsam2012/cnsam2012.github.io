@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CNSAM2012</title>
+  <title>常见忽略 | CNSAM2012</title>
 
   
   <meta name="author" content="吃俺昶">
   
 
   
-  <meta name="description" content="https://gitee.com/cnsam2012/banbang-fount-dev/issues/I4SL9H">
+  <meta name="description" content="“”">
   
 
   
@@ -22,7 +22,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="常见忽略"/>
 
   <meta property="og:site_name" content="CNSAM2012"/>
 
@@ -50,6 +50,8 @@
   <nav class="site-navigation">
     <ul>
       
+        <li><a href="/categories/Git%E5%AD%A6%E4%B9%A0">Git学习</a></li>
+      
         <li><a href="/St">Home</a></li>
       
         <li><a href="/Git">Archives</a></li>
@@ -63,14 +65,14 @@
 
   
     
-    <h3 class="article-title"><span></span></h3>
+    <h3 class="article-title"><span>常见忽略</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/02/17/Git/z-issue/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-02-17T07:30:55.903Z">
+      <a href="/Git/z-常见忽略/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-16T16:00:00.000Z">
           2022-02-17
         </time>
       </a>
@@ -83,7 +85,11 @@
   <div class="article-content">
     <div class="entry">
       
-        <p><a target="_blank" rel="noopener" href="https://gitee.com/cnsam2012/banbang-fount-dev/issues/I4SL9H">https://gitee.com/cnsam2012/banbang-fount-dev/issues/I4SL9H</a></p>
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># </span><span class="language-bash">忽略 node_modules 目录</span></span><br><span class="line">/node_modules</span><br><span class="line">/unpackage/dist</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+
+<p>node_modules不是你自己的源代码，而是存放你在package.json中指定的依赖的外部库和框架的文件，这些依赖库少的有几百M多的好几G，而且又不你的源代码，其内容已经存储在其他服务器上，没必要放到github，你只要把package.json放上去，别人下载你的package.json，运行个npm install就会自动把node_modules文件夹建立起来，和你自己的node_modules文件夹里面的内容一模一样。</p>
 
       
     </div>
@@ -93,6 +99,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Git学习/">Git学习</a>
+    </span>
     
 
     

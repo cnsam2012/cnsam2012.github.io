@@ -3,16 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CNSAM2012</title>
+  <title>工作流 | CNSAM2012</title>
 
   
   <meta name="author" content="吃俺昶">
   
 
   
-  <meta name="description" content="其实最基本的流程就是新建分支，在这个分支上改动代码，再提交上去，跟master分支合并。
-新建分支首先，在你新建分支之前，你应该在master分支，并且要保证你当前的是最新代码，要不然就是找死，最后提交代码就会出问题。
-12345git pull origin master #，在master分支下">
+  <meta name="description" content="“”">
   
 
   
@@ -24,7 +22,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="工作流"/>
 
   <meta property="og:site_name" content="CNSAM2012"/>
 
@@ -52,6 +50,8 @@
   <nav class="site-navigation">
     <ul>
       
+        <li><a href="/categories/Git%E5%AD%A6%E4%B9%A0">Git学习</a></li>
+      
         <li><a href="/St">Home</a></li>
       
         <li><a href="/Git">Archives</a></li>
@@ -65,14 +65,14 @@
 
   
     
-    <h3 class="article-title"><span></span></h3>
+    <h3 class="article-title"><span>工作流</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/02/17/Git/z-分支工作流/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-02-17T07:30:55.918Z">
+      <a href="/Git/z-分支工作流/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-16T16:00:00.000Z">
           2022-02-17
         </time>
       </a>
@@ -86,6 +86,8 @@
     <div class="entry">
       
         <p>其实最基本的流程就是新建分支，在这个分支上改动代码，再提交上去，跟master分支合并。</p>
+<span id="more"></span>
+
 <h3 id="新建分支"><a href="#新建分支" class="headerlink" title="新建分支"></a>新建分支</h3><p>首先，在你新建分支之前，你应该在master分支，并且要保证你当前的是最新代码，要不然就是找死，最后提交代码就会出问题。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master #，在master分支下，保证当前代码与线上同步，是最新的</span><br><span class="line">git branch &lt;分支名&gt; #，正儿八经的新建分支。</span><br><span class="line">git checkout &lt;分支名&gt; #，切换 到新建的分支上，再进行下一步。</span><br><span class="line">git push origin &lt;分支名&gt; #,把本地分支推到远端，让远端也有一个你的分支，用来后面提交你的代码。</span><br><span class="line">git checkout -b &lt;分支名&gt; #新建分支并切换到该分支：</span><br></pre></td></tr></table></figure>
 
@@ -124,6 +126,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Git学习/">Git学习</a>
+    </span>
     
 
     

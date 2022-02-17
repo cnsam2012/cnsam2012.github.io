@@ -3,18 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CNSAM2012</title>
+  <title>分支 | CNSAM2012</title>
 
   
   <meta name="author" content="吃俺昶">
   
 
   
-  <meta name="description" content="git branch 命令会列出所有分支，当前分支前面会标一个*号
-
-创建与合并分支12#创建分支newbranchgit branch newbranch
-
-12345#切换至分支newbranchgit checkout newbranch#切换分支推荐使用switchgit switch ne">
+  <meta name="description" content="“”">
   
 
   
@@ -26,7 +22,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="分支"/>
 
   <meta property="og:site_name" content="CNSAM2012"/>
 
@@ -54,6 +50,8 @@
   <nav class="site-navigation">
     <ul>
       
+        <li><a href="/categories/Git%E5%AD%A6%E4%B9%A0">Git学习</a></li>
+      
         <li><a href="/St">Home</a></li>
       
         <li><a href="/Git">Archives</a></li>
@@ -67,14 +65,14 @@
 
   
     
-    <h3 class="article-title"><span></span></h3>
+    <h3 class="article-title"><span>分支</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2022/02/17/Git/4-分支/" rel="bookmark">
-        <time class="entry-date published" datetime="2022-02-17T07:30:55.887Z">
+      <a href="/Git/4-分支/" rel="bookmark">
+        <time class="entry-date published" datetime="2022-02-16T16:00:00.000Z">
           2022-02-17
         </time>
       </a>
@@ -91,7 +89,7 @@
 <li><code>git branch</code> 命令会列出所有分支，当前分支前面会标一个<code>*</code>号</li>
 </ul>
 <h1 id="创建与合并分支"><a href="#创建与合并分支" class="headerlink" title="创建与合并分支"></a>创建与合并分支</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#创建分支newbranch</span><br><span class="line">git branch newbranch</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#切换至分支newbranch</span><br><span class="line">git checkout newbranch</span><br><span class="line"></span><br><span class="line">#切换分支推荐使用switch</span><br><span class="line">git switch newbranch</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#创建 + 切换分支，一个顶俩</span><br><span class="line">git checkout -b newbranch</span><br><span class="line">#switch也可以</span><br><span class="line">git switch -c newbranch</span><br><span class="line">#注意：这里C大写，可用于强制新建分支，会覆盖此前存在的同名分支</span><br><span class="line">git switch -C newbranch</span><br></pre></td></tr></table></figure>
@@ -123,6 +121,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/Git学习/">Git学习</a>
+    </span>
     
 
     
